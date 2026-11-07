@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de matrícula</title>
+
+    <!-- Tipo de letra: Quicksand (Google Fonts) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            background: #fde4ec;
+        }
+
+        body {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px 30px 30px;
+            text-align: center;
+            font-family: "Quicksand", "Segoe UI", Arial, sans-serif;
+            font-size: 16px;
+            color: #6b3a4a;
+            background: #fff0f5;
+            border: 4px solid #f7b8cd;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(214, 111, 146, 0.25);
+        }
+
+        /* Tablas suaves */
+        table {
+            border-collapse: separate;
+            border-spacing: 8px;
+            margin: auto;
+        }
+
+        .tabla-encabezado,
+        .tabla-datos {
+            border: 2px solid #f7c8d8;
+            border-radius: 16px;
+            background: #fff8fb;
+        }
+
+        .tabla-encabezado td,
+        .tabla-datos td {
+            padding: 8px 12px;
+            border: 1px solid #f9d5e2;
+            border-radius: 12px;
+            background: #ffffff;
+        }
+
+        .tabla-encabezado img {
+            border-radius: 10px;
+        }
+
+        table[border="0"] td {
+            padding: 10px;
+        }
+
+        /* Secciones */
+        fieldset {
+            border: 2px dashed #f4a9c2;
+            border-radius: 18px;
+            padding: 15px 20px 20px;
+            background: #fff5f9;
+        }
+
+        legend {
+            padding: 4px 18px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #ffffff;
+            background: #ee7fa3;
+            border-radius: 20px;
+        }
+
+        /* Campos */
+        input[type="text"],
+        input[type="number"],
+        input[type="email"] {
+            width: 90%;
+            padding: 8px 12px;
+            font-family: inherit;
+            font-size: 15px;
+            color: #6b3a4a;
+            background: #fffafc;
+            border: 1.5px solid #f4b6c9;
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus {
+            border-color: #e75480;
+            box-shadow: 0 0 0 3px rgba(231, 84, 128, 0.18);
+        }
+
+        input::placeholder {
+            color: #c9a0b0;
+        }
+
+        input[type="checkbox"] {
+            accent-color: #e75480;
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        /* Botones */
+        button {
+            padding: 9px 22px;
+            margin: 4px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            color: #ffffff;
+            background: linear-gradient(135deg, #f58fb0, #e75480);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(231, 84, 128, 0.3);
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(231, 84, 128, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <br>
+<table class="tabla-encabezado" width="100%">
+    <tr>
+        <td width="30%">
+            <img src="IMAGEN/IMAGENlogo.png" width="60%" alt="Logo de la Facultad de Humanidades y Artes UNAH">
+        </td>
+        <td width="70%">
+            <img src="IMAGEN/IMAGENfirma.png" width="100%" alt="Facultad de Artes, Universidad de Cuenca">
+        </td>
+    </tr>
+</table>
+
+    <br>
+    <form action="" id="formulario">
+    <fieldset>
+    <legend>DATOS PERSONALES</legend>
+    <table class="tabla-datos" width="80%" align="center">
+        <!--NOMBRE-->
+        <tr>
+            <td width="20%" align="left">Nombre</td>
+            <td width="50%" align="left"><input type="text" name="nombre" id="nombre" placeholder="Ingrese su nombre"
+                pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{2,40}" title="Solo letras, entre 2 y 40 caracteres">
+            </td>
+        </tr>
+
+        <!--APELLIDO PATERNO-->
+        <tr>
+            <td width="20%" align="left">Apellido paterno</td>
+            <td width="50%" align="left"><input type="text" name="paterno" id="paterno" placeholder="Ingrese su apellido paterno"
+                pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{2,40}" title="Solo letras, entre 2 y 40 caracteres"></td>
+        </tr>
+
+        <!--APELLIDO MATERNO-->
+        <tr>
+            <td width="20%" align="left">Apellido materno</td>
+            <td width="50%" align="left"><input type="text" name="materno" id="materno" placeholder="Ingrese su apellido materno"
+                pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{2,40}" title="Solo letras, entre 2 y 40 caracteres"></td>
+        </tr>
+
+        <!--EDAD-->
+        <tr>
+            <td width="20%" align="left">Edad</td>
+            <td width="50%" align="left">
+                <input type="number" title="Solo personas de 16 años o más" name="edad" id="edad"
+                    placeholder="Ingrese su edad cumplida" min="16" max="100"></td>
+        </tr>
+
+        <!--TELÉFONO CELULAR-->
+        <tr>
+            <td width="20%" align="left">Teléfono celular</td>
+            <td width="50%" align="left">
+                <input type="text" name="celular" id="celular" inputmode="numeric"
+                    pattern="9[0-9]{8}" title="Los celulares en Perú tienen 9 dígitos y empiezan con 9"
+                    placeholder="Ingrese su número de celular">
+            </td>
+        </tr>
+
+        <!--TELÉFONO FIJO-->
+        <tr>
+            <td width="20%" align="left">Teléfono fijo</td>
+            <td width="50%" align="left"><input type="text" name="fijo" id="fijo" inputmode="numeric"
+                pattern="[0-9]{7}" title="El teléfono fijo debe tener 7 dígitos"
+                placeholder="Ingrese su teléfono fijo"></td>
+        </tr>
+
+        <!--DNI-->
+        <tr>
+            <td width="20%" align="left">DNI</td>
+            <td width="50%" align="left"><input type="text" name="dni" id="dni" inputmode="numeric"
+                pattern="[0-9]{8}" title="El DNI debe tener exactamente 8 dígitos"
+                placeholder="Ingrese su DNI"></td>
+        </tr>
+
+        <!--CORREO-->
+        <tr>
+            <td width="20%" align="left">Correo electrónico</td>
+            <td width="50%" align="left"><input type="email" name="correo" id="correo" placeholder="Ingrese su correo electrónico"
+                title="Ingrese un correo válido, por ejemplo: nombre@correo.com"></td>
+        </tr>
+    </table>
+<br>
+<button type="button" onclick="mostrar()">Mostrar datos</button>
+<button type="button" onclick="pdf()">PDF</button>
+<button type="reset">Limpiar</button>
+
+<script>
+    // Reglas de cada campo (una sola función revisa todos, no hace falta una por input)
+    const letras = /[^A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]/g;
+    const numeros = /[^0-9]/g;
+    const reglas = {
+        nombre:  { quitar: letras,  max: 40, nombre: "El nombre",           msg: "solo admite letras" },
+        paterno: { quitar: letras,  max: 40, nombre: "El apellido paterno", msg: "solo admite letras" },
+        materno: { quitar: letras,  max: 40, nombre: "El apellido materno", msg: "solo admite letras" },
+        celular: { quitar: numeros, max: 9,  nombre: "El celular",          msg: "solo admite números", exacto: 9 },
+        fijo:    { quitar: numeros, max: 7,  nombre: "El teléfono fijo",    msg: "solo admite números", exacto: 7 },
+        dni:     { quitar: numeros, max: 8,  nombre: "El DNI",              msg: "solo admite números", exacto: 8 }
+    };
+    const formulario = document.getElementById("formulario");
+
+    // Mientras se escribe: avisa y borra lo que no se permite
+    formulario.addEventListener("input", function(e){
+        let campo = e.target;
+        let regla = reglas[campo.id];
+
+        if(regla){
+            let limpio = campo.value.replace(regla.quitar, "");
+            if(limpio !== campo.value){
+                campo.value = limpio;
+                alert(regla.nombre + " " + regla.msg + ".");
+            }
+            if(campo.value.length > regla.max){
+                campo.value = campo.value.slice(0, regla.max);
+                alert(regla.nombre + " admite como máximo " + regla.max + " caracteres.");
+            }
+            if(campo.id === "celular" && campo.value.length > 0 && campo.value[0] !== "9"){
+                campo.value = "";
+                alert("El celular debe empezar con 9.");
+            }
+        }
+
+        if(campo.id === "edad" && campo.value.length >= 2){
+            if(Number(campo.value) < 16){
+                campo.value = "";
+                alert("No se permiten menores de 16 años.");
+            } else if(Number(campo.value) > 100){
+                campo.value = "";
+                alert("La edad máxima permitida es 100 años.");
+            }
+        }
+    });
+
+    // Al salir del campo: revisa que no esté incompleto
+    formulario.addEventListener("change", function(e){
+        let campo = e.target;
+        let regla = reglas[campo.id];
+
+        if(regla && regla.exacto && campo.value !== "" && campo.value.length < regla.exacto){
+            campo.value = "";
+            alert(regla.nombre + " debe tener " + regla.exacto + " dígitos.");
+        }
+        if(campo.id === "edad" && campo.value !== "" && Number(campo.value) < 16){
+            campo.value = "";
+            alert("No se permiten menores de 16 años.");
+        }
+        if(campo.id === "correo" && campo.value !== "" && !campo.checkValidity()){
+            campo.value = "";
+            alert("El correo electrónico no es válido. Ejemplo: nombre@correo.com");
+        }
+    });
+
+    function mostrar(){
+        // Solo es obligatorio el nombre; los demás datos son opcionales
+        if(document.getElementById("nombre").value.trim() === ""){
+            alert("Ingrese al menos el nombre para mostrar los datos.");
+            return;
+        }
+        let nombrejs=document.getElementById("nombre").value;
+        let paternojs=document.getElementById("paterno").value;
+        let maternojs=document.getElementById("materno").value;
+        let edadjs=document.getElementById("edad").value;
+        let celularjs=document.getElementById("celular").value;
+        let fijojs=document.getElementById("fijo").value;
+        let dnijs=document.getElementById("dni").value;
+        let correojs=document.getElementById("correo").value;
+        alert("El nombre es: " + nombrejs + "\nEl apellido paterno es: " + paternojs +
+            "\nEl apellido materno es: " + maternojs + "\nLa edad es: " + edadjs +
+            "\nEl celular es: " + celularjs + "\nEl teléfono fijo es: " + fijojs +
+            "\nEl DNI es: " + dnijs  + "\nEl correo es: " + correojs   );
+    }
+    function pdf(){
+        window.print();
+    }
+</script>
+    </fieldset>
+<br><br>
+
+<fieldset>
+    <legend>CURSOS A MATRICULAR</legend>
+    <br>
+    <form action="">
+    <table width="100%" border="0" align="center">
+        <!--FILA 1 CURSOS-->
+        <tr align="left">
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">Matematica
+            </td>
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">Raz. matematico
+            </td>
+            <td width="30%">
+                <input type="checkbox"class="curso" onclick="contar_cursos()">Comunicacion
+            </td>
+        </tr>
+
+         <!--FILA 2 CURSOS-->
+        <tr align="left">
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">Canvas
+            </td>
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">IA Diseño
+            </td>
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">IA Programacion
+            </td>
+        </tr>
+
+        <!--FILA 3 CURSOS-->
+        <tr align="left">
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">HTML
+            </td>
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">CSS
+            </td>
+            <td width="30%">
+                <input type="checkbox" class="curso" onclick="contar_cursos()">JS
+            </td>
+        </tr>
+
+            <!--FILA 4 NUM CURSOS Y COSTO-->
+        <tr align="center">
+            <td width="30%">
+                <br>
+                <b>Numero de cursos:</b>
+                <br>
+                <input type="text" id="num_cursos" style="text-align: center;">
+            </td>
+            <td width="30%">
+                <br>
+                <b>Costo total:</b>
+                <br>
+                <input type="text" id="costo_total" style="text-align: right;">
+            </td>
+            <td width="30%">               
+                <button type="reset"><b>Limpiar</b></button>                
+                <button type="button" onclick="contar_cursos()"><b>Contar</b></button>                
+            </td>
+        </tr>
+    </table>
+<script>
+    function contar_cursos(){
+        let num_cursosjs = document.querySelectorAll(".curso:checked");
+      document.getElementById("num_cursos").value= num_cursosjs.length;
+      document.getElementById("costo_total").value= "S/." + num_cursosjs.length*100;
+    }
+</script>
+
+    </form>
+    </fieldset>
+
+</form>
+<br>
+</body>
+</html>
